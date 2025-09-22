@@ -9,12 +9,13 @@ let package = Package(
     dependencies: [
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
+        .package(url: "https://github.com/mongodb/mongo-swift-driver.git", from: "0.1.3")
     ],
     targets: [
         .target(
             name: "App",
-            dependencies: [
-                .product(name: "Vapor", package: "vapor")
+            dependencies: ["Vapor","MongoSwift"
+                //.product(name: "Vapor", package: "vapor")
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of
